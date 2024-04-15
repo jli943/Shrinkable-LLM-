@@ -3,3 +3,5 @@ tokenizer.model
 *output*
 *.safetensors
 *.json
+tmp/
+tllm*/
