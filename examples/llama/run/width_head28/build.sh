@@ -1,0 +1,1 @@
+trtllm-build --checkpoint_dir ./tllm_checkpoint_1gpu_fp16_layer32_head28_hiddensize3584 --output_dir ./trtengines_fp16_1gpu_layer32_head28_hiddensize3584 --gemm_plugin float16

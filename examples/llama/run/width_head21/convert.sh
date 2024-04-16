@@ -1,0 +1,1 @@
+python3 /TensorRT-LLM/examples/llama/convert_checkpoint.py --model_dir NousResearch/Llama-2-7b-hf  --output_dir ./tllm_checkpoint_1gpu_fp16_layer32_head21_hiddensize2688 --dtype float16 --n_layer 32 --n_head 21 --n_kv_head 21 --n_embd 2688

@@ -5,3 +5,6 @@ tokenizer.model
 *.json
 tmp/
 tllm*/
+trtengines*/
+rank0.safetensors
+rank0.engine

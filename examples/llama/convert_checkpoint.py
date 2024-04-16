@@ -315,11 +315,15 @@ def preload_model(model_dir, args):
     else:
         model = AutoModelForCausalLM.from_pretrained(
             model_dir,
-            device_map='auto',
             torch_dtype='auto',
             trust_remote_code=True,
             #JL
+            # device_map='auto',
             num_hidden_layers=args.n_layer,
+            num_attention_heads=args.n_head,
+            num_key_value_heads=args.n_kv_head,
+            hidden_size=args.n_embd,
+            ignore_mismatched_sizes=True,
         )
     return model
 
@@ -372,6 +376,9 @@ def convert_and_save_hf(args):
                 preloaded_model=hf_model,
                 #JL
                 num_hidden_layers=args.n_layer,
+                num_attention_heads=args.n_head,
+                num_key_value_heads=args.n_kv_head,
+                hidden_size=args.n_embd,
                 )
             llama.save_checkpoint(args.output_dir, save_config=(rank == 0))
             del llama
